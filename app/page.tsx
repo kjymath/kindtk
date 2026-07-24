@@ -34,13 +34,17 @@ export default function Home() {
       {/* Feature cards - placeholders for future extension */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-24 w-full text-left">
         {[
-          { title: "개념 쏙쏙 강좌", desc: "핵심 원리를 쉽게 풀어서 설명하는 명쾌한 강의" },
+          { title: "중학교 1학년 수학 탐구", desc: "" },
           { title: "실력 쑥쑥 문제풀이", desc: "수준별 맞춤 문제로 빈틈없이 다지는 탄탄한 실력" },
           { title: "1:1 밀착 코칭", desc: "모르는 문제와 공부 고민까지 1:1 맞춤 피드백" }
         ].map((feature, i) => (
-          <div key={i} className="p-8 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1">
-            <h3 className="font-semibold text-gray-900 mb-2 text-lg">{feature.title}</h3>
-            <p className="text-gray-500 text-sm leading-relaxed">{feature.desc}</p>
+          <div key={i} className={`p-8 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-center`}>
+            <h3 className={`font-bold text-gray-900 ${!feature.desc ? 'text-2xl text-center' : 'text-lg mb-2'}`}>
+              {feature.title}
+            </h3>
+            {feature.desc && (
+              <p className="text-gray-500 text-sm leading-relaxed">{feature.desc}</p>
+            )}
           </div>
         ))}
       </div>
