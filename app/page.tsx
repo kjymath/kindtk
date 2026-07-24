@@ -1,4 +1,5 @@
 import { BookOpen } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,9 +23,9 @@ export default function Home() {
 
       {/* Action Buttons */}
       <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
-        <button className="w-full sm:w-auto px-8 py-4 bg-gray-900 text-white rounded-full font-semibold text-sm sm:text-base hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center gap-2">
-          <span>학습 시작하기</span>
-        </button>
+        <Link href="/qna" className="w-full sm:w-auto px-8 py-4 bg-gray-900 text-white rounded-full font-semibold text-sm sm:text-base hover:bg-gray-800 transition-all shadow-lg hover:shadow-xl active:scale-95 flex items-center justify-center gap-2">
+          <span>1:1 질문하기</span>
+        </Link>
         <button className="w-full sm:w-auto px-8 py-4 bg-white text-gray-700 rounded-full font-semibold text-sm sm:text-base hover:bg-gray-50 transition-all shadow-sm border border-gray-200 active:scale-95 flex items-center justify-center gap-2">
           <span>더 알아보기</span>
         </button>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -20,14 +21,14 @@ export default function RootLayout({
         {/* Header 영역 - 반투명 효과 및 둥근 그림자 적용 */}
         <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/70 border-b border-gray-100/50 shadow-sm transition-all duration-300">
           <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div className="font-semibold text-lg tracking-tight text-gray-900 cursor-pointer">
+            <Link href="/" className="font-semibold text-lg tracking-tight text-gray-900 cursor-pointer">
               친절한 강선생의 <span className="text-blue-500">수학탐구교실</span>
-            </div>
+            </Link>
             {/* Navigation - 차후 메뉴 추가 가능 */}
             <nav className="hidden sm:flex items-center gap-8 text-sm font-medium text-gray-600">
-              <a href="#" className="hover:text-blue-500 transition-colors">소개</a>
-              <a href="#" className="hover:text-blue-500 transition-colors">학습 자료</a>
-              <a href="#" className="hover:text-blue-500 transition-colors">질문 게시판</a>
+              <Link href="/" className="hover:text-blue-500 transition-colors">소개</Link>
+              <Link href="/" className="hover:text-blue-500 transition-colors">학습 자료</Link>
+              <Link href="/qna" className="hover:text-blue-500 transition-colors text-blue-500 font-semibold">질문 게시판</Link>
             </nav>
           </div>
         </header>
