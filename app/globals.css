@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f9fafb; /* bg-gray-50 */
+  --foreground: #1f2937; /* 짙은 차콜색 */
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
