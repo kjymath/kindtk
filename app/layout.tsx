@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -28,10 +29,6 @@ export default function RootLayout({
             <nav className="hidden sm:flex items-center gap-8 text-sm font-medium text-gray-600">
               <Link href="/" className="hover:text-blue-500 transition-colors">소개</Link>
               <Link href="/qna" className="hover:text-blue-500 transition-colors">질문 게시판</Link>
-              <Link href="/chat" className="hover:text-blue-500 transition-colors text-blue-500 font-bold flex items-center gap-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-                AI 수학 튜터
-              </Link>
             </nav>
           </div>
         </header>
@@ -49,6 +46,9 @@ export default function RootLayout({
             © {new Date().getFullYear()} 친절한 강선생의 수학탐구교실. All rights reserved.
           </div>
         </footer>
+
+        {/* 플로팅 챗봇 위젯 */}
+        <ChatWidget />
       </body>
     </html>
   );
