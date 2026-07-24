@@ -35,7 +35,7 @@ export default function Home() {
         {[
           { title: "개념 쏙쏙 강좌", desc: "핵심 원리를 쉽게 풀어서 설명하는 명쾌한 강의" },
           { title: "실력 쑥쑥 문제풀이", desc: "수준별 맞춤 문제로 빈틈없이 다지는 탄탄한 실력" },
-          { title: "1:1 밀착 코칭", desc: "모르는 문제는 언제든 질문하고 해결하는 피드백" }
+          { title: "1:1 밀착 코칭", desc: "모르는 문제와 공부 고민까지 1:1 맞춤 피드백" }
         ].map((feature, i) => (
           <div key={i} className="p-8 bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-1">
             <h3 className="font-semibold text-gray-900 mb-2 text-lg">{feature.title}</h3>
