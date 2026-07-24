@@ -1,21 +1,13 @@
 "use client";
 
-import { useChat } from "@ai-sdk/react";
+import { useChat } from "ai/react";
 import { useEffect, useRef, useState } from "react";
 import { Send, Sparkles, User, MessageCircle, X } from "lucide-react";
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [input, setInput] = useState("");
-  const { messages, append, isLoading } = useChat();
+  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat();
   const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-    append({ role: "user", content: input });
-    setInput("");
-  };
 
   // 자동 스크롤
   useEffect(() => {
@@ -94,10 +86,10 @@ export default function ChatWidget() {
 
           {/* 입력 폼 */}
           <div className="p-3 bg-white border-t border-gray-100 shrink-0">
-            <form onSubmit={onSubmit} className="relative flex items-end gap-2">
+            <form onSubmit={handleSubmit} className="relative flex items-end gap-2">
               <textarea
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
+                onChange={handleInputChange}
                 placeholder="수학 질문 입력..."
                 className="w-full bg-gray-100 border-none rounded-xl py-3 pl-4 pr-12 focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-sm resize-none overflow-hidden"
                 rows={1}

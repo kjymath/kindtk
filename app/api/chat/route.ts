@@ -19,5 +19,5 @@ export async function POST(req: Request) {
     messages: [systemMessage, ...messages],
   });
 
-  return result.toTextStreamResponse();
+  return result.toDataStreamResponse();
 }
